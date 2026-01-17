@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Care Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/CaiDat.css">
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+
+
+    <div class="settings-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="settings-sidebar">
+        <h3>Cài đặt</h3>
+        <ul>
+          <li class="active">⚙️ Hệ thống</li>
+          <li>👤 Tài khoản</li>
+          <li>🎨 Giao diện</li>
+          <li>🔔 Thông báo</li>
+          <li>🔐 Bảo mật</li>
+        </ul>
+      </aside>
+    
+      <!-- CONTENT -->
+      <main class="settings-content">
+    
+        <div class="header">
+          <h1>Cài Đặt </h1>
+      
+          <div class="header-actions">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm">
+          </div>
+        </div>
+    
+        <!-- NHÓM -->
+        <div class="settings-section">
+          <h4>Ngôn ngữ</h4>
+    
+          <div class="setting-row">
+            <div>
+              <b>Ngôn ngữ hiển thị</b>
+              <p>Chọn ngôn ngữ giao diện hệ thống</p>
+            </div>
+            <select id="language">
+              <option>Tiếng Việt</option>
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+    
+        <div class="settings-section">
+          <h4>Giao diện</h4>
+    
+          <div class="setting-row">
+            <div>
+              <b>Chế độ tối</b>
+              <p>Bật giao diện nền tối</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="darkMode">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+    
+        <div class="settings-section">
+          <h4>Thông báo</h4>
+    
+          <div class="setting-row">
+            <div>
+              <b>Nhận thông báo lịch hẹn</b>
+              <p>Thông báo khi có lịch hẹn mới</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+    
+        <div class="settings-section danger">
+          <h4>Tài khoản</h4>
+    
+          <div class="setting-row">
+            <div>
+              <b>Đăng xuất</b>
+              <p>Thoát khỏi hệ thống quản trị</p>
+            </div>
+            <button class="logout-btn" onclick="logout()">Đăng xuất</button>
+          </div>
+        </div>
+    
+      </main>
+    </div>
+</main>
+</div>
+<script src="js/CaiDat.js"></script>
+</body>
+</html>

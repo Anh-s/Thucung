@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý nhân viên</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/NhanVien.css">
+
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+    <div class="header">
+      <h1>Nhân Viên</h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm theo tên và mã">
+        <button class="add-btn" id="btnCreate">+ Thêm </button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+  
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" data-range="day">Hôm nay</button>
+      <button class="tab" data-range="week">Tuần này</button>
+      <button class="tab" data-range="month">Tháng này</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-card">
+      <table class="employee-table">
+          <thead>
+            <tr>
+              <th>Mã NV</th>
+              <th>Tên nhân viên</th>
+              <th>Số điện thoại</th>
+              <th>Ca làm việc</th>
+              <th>Chăm sóc</th>
+              <th></th>
+            </tr>
+          </thead>        
+        <tbody id="employeeList"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="employeeModal">
+    <div class="modal-box">
+      <h2 id="modalTitle">Thêm nhân viên</h2>
+
+      <form id="employeeForm">
+        <input type="hidden" id="empId">
+
+        <div class="form-group">
+          <label>Tên nhân viên</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="text" id="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label>Khung giờ làm việc</label>
+          <select id="shift">
+            <option value="Sáng (8h - 12h)">Sáng (8h - 12h)</option>
+            <option value="Chiều (13h - 17h)">Chiều (13h - 17h)</option>
+            <option value="Cả ngày (8h - 17h)">Cả ngày (8h - 17h)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Chăm sóc động vật</label>
+          <select id="animals" multiple>
+            <option value="Chó">Chó</option>
+            <option value="Mèo">Mèo</option>
+            <option value="Thỏ">Thỏ</option>
+            <option value="Chim">Chim</option>
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn cancel" id="btnCancel">Hủy</button>
+          <button type="submit" class="btn save">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+</div>
+<script src="js/NhanVien.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Sản phẩm </title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/SanPham.css">
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    <div class="header">
+      <h1>Sản Phẩm</h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm tên sản phẩm">
+        <button class="add-btn" id="btnCreate">+ Thêm </button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+    <div class="filter">
+      <select id="petFilter" onchange="renderProducts()">
+        <option value="">Tất cả thú cưng</option>
+        <option value="Chó">Chó</option>
+        <option value="Mèo">Mèo</option>
+        <option value="Hamster">Hamster</option>
+        <option value="Vẹt">Vẹt</option>
+      </select>
+
+      <select id="petFilter" onchange="renderProducts()">
+        <option value="">Sản phẩm </option>
+        <option value="Đồ chơi">Đồ chơi</option>
+        <option value="Phụ kiện">Phụ kiện</option>
+        <option value="Vệ sinh">Vệ sinh</option>
+      </select>
+    </div>
+    
+    <div class="container">
+      <div class="product-grid" id="productList"></div>
+    </div>
+    
+    
+    
+    <!-- Popup -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3 id="formTitle">Thêm sản phẩm</h3>
+    
+        <input id="name" placeholder="Tên sản phẩm">
+        <select id="pet">
+          <option>Chó</option>
+          <option>Mèo</option>
+          <option>Hamster</option>
+          <option>Vẹt</option>
+        </select>
+    
+        <select id="category">
+          <option>Thức ăn</option>
+          <option>Đồ chơi</option>
+          <option>Phụ kiện</option>
+          <option>Vệ sinh</option>
+        </select>
+    
+        <input id="price" type="number" placeholder="Giá bán (VNĐ)">
+        <input id="weight" type="number" placeholder="Số lượng (kg/cái)">
+        <input id="stock" type="number" placeholder="Số lượng tồn">
+        <label>Hình ảnh sản phẩm</label>
+        <input type="file" id="image" accept="image/*">
+        
+        <img id="previewImage" style="
+          width:100%;
+          height:160px;
+          object-fit:cover;
+          border-radius:8px;
+          display:none;
+          margin-bottom:10px;
+        ">
+        
+        <textarea id="desc" placeholder="Mô tả sản phẩm"></textarea>
+    
+        <div class="popup-actions">
+          <button onclick="closePopup()">Hủy</button>
+          <button class="save" onclick="saveProduct()">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+</main>
+</div>
+
+<script src="js/SanPham.js"></script>
+</body>
+</html>

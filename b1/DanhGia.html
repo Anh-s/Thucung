@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Đánh Giá</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/DanhGia.css">
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    <div class="header">
+      <h1>Đánh Giá </h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm theo tên">
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter">
+      <label>Lọc theo số sao:</label>
+      <select id="starFilter" onchange="renderReviews()">
+        <option value="">Tất cả</option>
+        <option value="5">⭐⭐⭐⭐⭐ (5 sao)</option>
+        <option value="4">⭐⭐⭐⭐ (4 sao)</option>
+        <option value="3">⭐⭐⭐ (3 sao)</option>
+        <option value="2">⭐⭐ (2 sao)</option>
+        <option value="1">⭐ (1 sao)</option>
+      </select>
+    </div>
+
+    <!-- LIST -->
+    <div id="reviewList" class="review-list"></div>
+</main>
+</div>
+<script src="js/DanhGia.js"></script>
+</body>
+</html>
+

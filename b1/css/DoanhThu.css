@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #F4F8FB;
+  }
+  
+  .layout {
+    display: flex;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 22px;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* đẹp hơn */
+  .header-actions input {
+    height: 20px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #d6e2eb;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.22s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+  
+  .header-actions input:hover {
+    border-color: #b6d2e8;
+  }
+  
+  .header-actions input:focus {
+    border-color: #7db6e8;
+    box-shadow: 0 0 0 3px rgba(65,140,215,0.18);
+  }
+  
+  #searchInput {
+    min-width: 240px;
+  }
+  
+  .dashboard {
+    padding: 25px;
+    max-width: 3500px;
+  }
+  
+  .card {
+    background: #f7fffb;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card h3 {
+    margin: 0;
+    color: #2c3e50;
+  }
+  
+  .total {
+    font-size: 22px;
+    font-weight: bold;
+    color: #16a085;
+  }
+  
+  .month-total {
+    font-size: 26px;
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+  }
+  
+  .kpi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+  }
+  
+  .kpi-card p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 18px;
+  }
+  
+  .kpi-card h2 {
+    margin: 6px 0;
+    color: #2c3e50;
+  }
+  
+  .kpi-card span {
+    font-size: 13px;
+    color: #27ae60;
+  }
+  
+  .kpi-card.up {
+    border-left: 5px solid #27ae60;
+  }
+  

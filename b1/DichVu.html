@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Dịch Vụ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/DichVu.css">
+  
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    <div class="header">
+      <h1>Dịch Vụ </h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm theo tên ">
+        <button class="add-btn" id="btnCreate">+ Thêm </button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+  
+    <div class="service-list" id="serviceList"></div>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3 id="formTitle">Thêm dịch vụ</h3>
+
+        <input id="name" placeholder="Tên dịch vụ">
+        <input id="price" type="number" placeholder="Giá (VNĐ)">
+        <input id="duration" placeholder="Thời gian (VD: 30 phút)">
+
+        <label>Áp dụng cho thú cưng</label>
+        <select id="pets" multiple>
+          <option>Chó</option>
+          <option>Mèo</option>
+          <option>Hamster</option>
+          <option>Vẹt</option>
+        </select>
+
+        <textarea id="desc" placeholder="Mô tả dịch vụ"></textarea>
+
+        <div class="popup-actions">
+          <button onclick="closePopup()">Hủy</button>
+          <button class="save" onclick="saveService()">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+</main>
+</div>
+<script src="js/DichVu.js"></script>
+</body>
+</html>
+

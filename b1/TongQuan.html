@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Care Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/TongQuan.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾 Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+    
+    <div class="dashboard">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Dashboard</h1>
+            
+            <div class="date-box">
+                <span class="icon">📅</span>
+                <input type="date" id="dashboardDate">
+              </div>
+          </div>
+      
+        <!-- STAT CARDS -->
+        <div class="stats">
+            <div class="card blue" >
+              <div class="info">
+                <p>Tổng thú cưng</p>
+                <h3>18</h3>
+              </div>
+              <span class="icon">🐾</span>
+            </div>
+            
+          <a href="LichHen.html">
+            <div class="card yellow">
+              <div class="info">
+                <p>Lịch hẹn</p>
+                <h3>10</h3>
+              </div>
+              <span class="icon">📅</span>
+            </div>
+          </a>
+          
+          <a href="DoanhThu.html">
+            <div class="card green">
+              <div class="info">
+                <p>Doanh thu</p>
+                <h3>2,300,000đ</h3>
+              </div>
+              <span class="icon">💰</span>
+            </div>
+          </a>
+            
+          <a href="KhachHang.html">
+            <div class="card pink">
+              <div class="info">
+                <p>Khách hàng mới</p>
+                <h3>+6</h3>
+              </div>
+              <span class="icon">✨</span>
+            </div>
+          </a>
+            
+        </div>
+      
+        <!-- MAIN CONTENT -->
+        <div class="main">
+      
+          <!-- LEFT -->
+          <div class="left">
+      
+            <!-- REVENUE -->
+            <div class="box">
+              <div class="dashboard-card">
+                <div class="card-header">
+                  <h3>Doanh thu tuần này</h3>
+                  <span class="total">24,300,000đ </span>
+                </div>
+                  
+                <div class="card-body">
+                  <canvas id="revenueChart"></canvas>
+                </div>
+              </div>               
+            </div>
+            <!-- TODAY APPOINTMENTS -->
+            <div class="box">
+              <div class="box-header">
+                <h3>Lịch hẹn hôm nay</h3>
+                <span class="sub-text">10 lịch hẹn</span>
+              </div>
+
+              <div class="appointment-list">
+
+                <div class="appointment">
+                  <img src="img/dog1.jpg" alt="Max">
+                  <div class="info">
+                    <strong>Max</strong>
+                    <small>🐶 Tắm & Grooming</small>
+                    <span>09:00</span>
+                  </div>
+                  <button>Chi tiết</button>
+                </div>
+
+                <div class="appointment">
+                  <img src="img/cat1.jpg" alt="Miu Miu">
+                  <div class="info">
+                    <strong>Miu Miu</strong>
+                    <small>🐱 Spa thư giãn</small>
+                    <span>09:30</span>
+                  </div>
+                  <button>Chi tiết</button>
+                </div>
+
+                <div class="appointment">
+                  <img src="img/dog2.jpg" alt="Bông">
+                  <div class="info">
+                    <strong>Bông</strong>
+                    <small>🐶 Trông giữ</small>
+                    <span>10:00</span>
+                  </div>
+                  <button>Chi tiết</button>
+                </div>
+
+                <div class="appointment">
+                  <img src="img/cat2.jpg" alt="Luna">
+                  <div class="info">
+                    <strong>Luna</strong>
+                    <small>🐱 Cắt móng</small>
+                    <span>10:30</span>
+                  </div>
+                  <button>Chi tiết</button>
+                </div>
+                
+                <!-- VIEW MORE -->
+                <div class="view-more">
+                  <a href="LichHen.html">Xem thêm lịch hẹn &gt;</a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+      
+          <!-- RIGHT -->
+          <div class="right">
+      
+            <!-- SERVICES -->
+            <div class="box">
+              <h3>Dịch vụ phổ biến</h3>
+          
+              <div class="progress" data-percent="42">
+                <div class="progress-header">
+                  <span>🐶 Tắm & Grooming</span>
+                  <small>42%</small>
+                </div>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+              </div>
+          
+              <div class="progress" data-percent="28">
+                <div class="progress-header">
+                  <span>🐱 Spa thư giãn</span>
+                  <small>28%</small>
+                </div>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+              </div>
+          
+              <div class="progress" data-percent="18">
+                <div class="progress-header">
+                  <span>🐾 Trông giữ thú cưng</span>
+                  <small>18%</small>
+                </div>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+              </div>
+
+              <div class="progress" data-percent="12">
+                <div class="progress-header">
+                  <span>💉 Vaccine</span>
+                  <small>12%</small>
+                </div>
+                <div class="bar">
+                  <div class="fill"></div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- RETURNING CUSTOMER -->
+            <div class="box">
+              <h3>Khách hàng quay lại</h3>
+              <canvas id="customerChart"></canvas>
+            </div>
+      
+            <!-- REVIEWS -->
+            <div class="box">
+              <h3>Đánh giá gần đây</h3>
+            
+              <div class="review">
+                <img src="img/dd1.jpg" alt="Huỳnh Anh">
+                <div class="review-content">
+                  <div class="review-header">
+                    <strong>Huỳnh Anh</strong>
+                    <span class="time">10:30 • 12/01/2026</span>
+                  </div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                  <p>Pet spa sạch sẽ, tư vấn nhiệt tình ❤️</p>
+                </div>
+              </div>
+            
+              <div class="review">
+                <img src="img/dd2.jpg" alt="Kiều Ngân">
+                <div class="review-content">
+                  <div class="review-header">
+                    <strong>Kiều Ngân</strong>
+                    <span class="time">15:20 • 11/01/2026</span>
+                  </div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                  <p>Tắm xong thơm, cún rất thích 🐶</p>
+                </div>
+              </div>
+            
+              <!-- VIEW MORE -->
+              <div class="view-more">
+                <a href="DanhGia.html">Xem thêm đánh giá &gt;</a>
+              </div>
+            </div>            
+      
+          </div>
+        </div>
+      
+  </main>
+</div>
+<script src="js/TongQuan.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #F4F8FB;
+  }
+  
+  .layout {
+    display: flex;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 22px;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* đẹp hơn */
+  .header-actions input {
+    height: 20px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #d6e2eb;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.22s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+  
+  .header-actions input:hover {
+    border-color: #b6d2e8;
+  }
+  
+  .header-actions input:focus {
+    border-color: #7db6e8;
+    box-shadow: 0 0 0 3px rgba(65,140,215,0.18);
+  }
+  
+  #searchInput {
+    min-width: 240px;
+  }
+  
+  .filter {
+    text-align: left;
+    margin: 0 0 20px 20px;
+  }
+  
+  select {
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  .review-list {
+    max-width: 3300px;
+    margin-left: 20px;
+  }  
+  
+  .review-card {
+    background: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .review-header b {
+    color: #333;
+  }
+  
+  .stars {
+    color: #f1c40f;
+  }
+  
+  .product {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .review-content {
+    margin-top: 8px;
+    color: #444;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+  }
+
+  .reply-section {
+    margin-top: 12px;
+  }
+  
+  .reply-box {
+    background: #f1f8ff;
+    border-left: 4px solid #4a90e2;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .reply-box b {
+    color: #2c6ed5;
+  }
+  
+  .reply-section textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 6px;
+  }
+  
+  .reply-section button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .reply-section button:hover {
+    background: #357bd8;
+  }
+  

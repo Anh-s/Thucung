@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #F4F8FB;
+  }
+  
+  .layout {
+    display: flex;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 22px;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* đẹp hơn */
+  .header-actions input {
+    height: 20px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #d6e2eb;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.22s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+  
+  .header-actions input:hover {
+    border-color: #b6d2e8;
+  }
+  
+  .header-actions input:focus {
+    border-color: #7db6e8;
+    box-shadow: 0 0 0 3px rgba(65,140,215,0.18);
+  }
+  
+  #searchInput {
+    min-width: 240px;
+  }
+  
+  /* BUTTONS */
+  .add-btn {
+    background: #2aa785;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .add-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .gray-btn {
+    background: #ccc;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* TABS */
+  .tabs {
+    margin: 20px 0;
+  }
+  
+  .tab {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #EAF4FB;
+    transition: 0.2s;
+  }
+  
+  .tab.active {
+    background: #BADFF3;
+    font-weight: 600;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn.add {
+    background: #2aa785;
+    color: white;
+  }
+  
+  .table-card {
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+  }
+  
+  .employee-table thead th {
+    background: #f6f9fc;
+    padding: 14px;
+    color: #5f6f82;
+  }
+  
+  .employee-table tbody tr {
+    background: white;
+    transition: .25s;
+  }
+  
+  .employee-table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+  
+  .employee-table td {
+    padding: 14px;
+    font-size: 14px;
+  }
+  
+  .badge {
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    background: #eef3f8;
+  }
+  
+  /* MODAL */
+  /* ===== MODAL UI ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(3px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-box {
+    width: 480px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 26px;
+    animation: modalFade .25s ease;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    border: 1px solid #eaeaea;
+  }
+  
+  @keyframes modalFade {
+    from { transform: scale(.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .modal-box h2 {
+    margin: 0 0 14px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 9px 12px;
+    border: 1px solid #d3d7de;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #2f80ed;
+  }
+  
+  .modal-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .btn {
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn.cancel {
+    background: #f3f3f3;
+  }
+  
+  .btn.save {
+    background: #2f80ed;
+    color: white;
+  }
+  
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-box {
+    background: white;
+    width: 480px;
+    border-radius: 20px;
+    padding: 24px;
+    animation: zoom .25s ease;
+  }
+  
+  @keyframes zoom {
+    from { opacity: 0; transform: scale(.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d6e2eb;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .btn.cancel {
+    background: #eee;
+  }
+  
+  .btn.save {
+    background: #2aa785;
+    color: white;
+  }
+
+  .emp-code {
+    font-weight: 600;
+    color: #4a90e2;
+    white-space: nowrap;
+  }
+  
+  .emp-name {
+    font-weight: 500;
+  }
+  

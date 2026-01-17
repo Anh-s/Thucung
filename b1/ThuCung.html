@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Tin Thú Cưng</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ThuCung.css">
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾 Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+    
+    <div class="header">
+      <h1>Tin Thu Cưng</h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm theo tiêu đề / mô tả">
+        <button class="add-btn" id="btnCreate">+ Thêm </button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+  
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" data-range="day">Hôm nay</button>
+      <button class="tab" data-range="week">Tuần này</button>
+      <button class="tab" data-range="month">Tháng này</button>
+    </div>
+    
+    <main class="container"></main>
+    
+      <div class="news-grid" id="newsList">
+        <!-- Card tin -->
+        <div class="news-card">
+          <div class="thumb">
+            <img src="img/cat1.jpg">
+          </div>          
+          <div class="news-content">
+            <h3>Review toàn tập các loại cát cho mèo</h3>
+            <p>Đối với bất kỳ ai đang nuôi mèo, việc chọn cát vệ sinh...</p>
+            <span class="time">Đăng lúc: 12/01/2026 - 14:20</span>
+            <div class="actions">
+              <button onclick="viewNews(this)">Chi tiết</button>
+              <button onclick="editNews(this)">Sửa</button>
+            </div>
+          </div>
+        </div>   
+
+        <div class="news-card">
+          <div class="thumb">
+            <img src="img/cat2.jpg">
+          </div>          
+          <div class="news-content">
+            <h3>Review toàn tập các loại cát cho mèo</h3>
+            <p>Đối với bất kỳ ai đang nuôi mèo, việc chọn cát vệ sinh...</p>
+            <span class="time">Đăng lúc: 12/01/2026 - 14:20</span>
+            <div class="actions">
+              <button onclick="viewNews(this)">Chi tiết</button>
+              <button onclick="editNews(this)">Sửa</button>
+            </div>
+          </div>
+        </div>  
+
+        <div class="news-card">
+          <div class="thumb">
+            <img src="img/cat3.jpg">
+          </div>          
+          <div class="news-content">
+            <h3>Review toàn tập các loại cát cho mèo</h3>
+            <p>Đối với bất kỳ ai đang nuôi mèo, việc chọn cát vệ sinh...</p>
+            <span class="time">Đăng lúc: 12/01/2026 - 14:20</span>
+            <div class="actions">
+              <button onclick="viewNews(this)">Chi tiết</button>
+              <button onclick="editNews(this)">Sửa</button>
+            </div>
+          </div>
+        </div>    
+        
+        <div class="news-card">
+          <div class="thumb">
+            <img src="img/cat4.jpg">
+          </div>          
+          <div class="news-content">
+            <h3>Review toàn tập các loại cát cho mèo</h3>
+            <p>Đối với bất kỳ ai đang nuôi mèo, việc chọn cát vệ sinh...</p>
+            <span class="time">Đăng lúc: 12/01/2026 - 14:20</span>
+            <div class="actions">
+              <button onclick="viewNews(this)">Chi tiết</button>
+              <button onclick="editNews(this)">Sửa</button>
+            </div>
+          </div>
+        </div>   
+
+        <div class="news-card">
+          <div class="thumb">
+            <img src="img/cat5.jpg">
+          </div>          
+          <div class="news-content">
+            <h3>Review toàn tập các loại cát cho mèo</h3>
+            <p>Đối với bất kỳ ai đang nuôi mèo, việc chọn cát vệ sinh...</p>
+            <span class="time">Đăng lúc: 12/01/2026 - 14:20</span>
+            <div class="actions">
+              <button onclick="viewNews(this)">Chi tiết</button>
+              <button onclick="editNews(this)">Sửa</button>
+            </div>
+          </div>
+        </div>   
+      </div>
+    
+    </main>
+    
+    <!-- POPUP FORM -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3 id="formTitle">📝 Thêm tin thú cưng</h3>
+    
+        <label>Tiêu đề</label>
+        <input type="text" id="newsTitle">
+    
+        <label>Hình ảnh</label>
+        <input type="file" id="newsImage">
+    
+        <label>Mô tả ngắn</label>
+        <textarea id="newsDesc"></textarea>
+    
+        <label>Nội dung chi tiết</label>
+        <textarea id="newsContent" rows="4"></textarea>
+
+        <label>Thời gian đăng</label>
+        <input type="text" id="newsTime" disabled style="background:#f1f5f9;color:#444;">
+    
+        <div class="popup-actions">
+          <button onclick="closeForm()">Hủy</button>
+          <button class="save" onclick="saveNews()">Lưu</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- POPUP VIEW -->
+    <div class="popup" id="viewPopup">
+      <div class="popup-content">
+        <h3 id="viewTitle"></h3>
+        <img id="viewImage">
+        <p id="viewContent"></p>
+        <button onclick="closeView()">Đóng</button>
+      </div>
+    </div>
+</main>
+</div>
+<script src="js/ThuCung.js"></script>
+</body>
+</html>

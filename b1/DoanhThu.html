@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Doanh Thu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/DoanhThu.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2> Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    <div class="header">
+      <h1>Doanh Thu </h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+      </div>
+    </div>
+
+    <div class="dashboard">
+
+      <!-- KPI -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <p>Doanh thu hôm nay</p>
+          <h2>2,300,000đ</h2>
+        </div>
+    
+        <div class="kpi-card up">
+          <p>Doanh thu tháng</p>
+          <h2>98,500,000đ</h2>
+          <span>▲ 12% so với tháng trước</span>
+        </div>
+    
+        <div class="kpi-card">
+          <p>Lịch hẹn tuần</p>
+          <h2>90</h2>
+        </div>
+    
+        <div class="kpi-card up">
+          <p>Tăng trưởng tuần</p>
+          <h2>+18%</h2>
+        </div>
+      </div>
+    
+      <!-- DOANH THU TUẦN -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Doanh thu & Lịch hẹn tuần này</h3>
+          <strong class="total">24,300,000đ</strong>
+        </div>
+        <canvas id="weekChart"></canvas>
+      </div>
+    
+      <!-- DASHBOARD THÁNG -->
+      <div class="card">
+        <h3>Doanh thu các tháng</h3>
+        <canvas id="monthChart"></canvas>
+      </div>
+    
+    </div>
+    
+</main>
+</div>
+<script src="js/DoanhThu.js"></script>
+</body>
+</html>
+

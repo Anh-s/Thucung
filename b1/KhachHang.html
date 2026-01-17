@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý khách hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/KhachHang.css">
+</head>
+<body>
+
+<header class="topbar">
+  <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    
+    <div class="header">
+      <h1>Khách Hàng</h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm theo tên hoặc số điện thoại...">
+        <button class="add-btn" id="btnCreate">+ Thêm </button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+  
+    <div class="toolbar card-toolbar">
+      <select id="filterVip" class="select-ui">
+        <option value="">Tất cả</option>
+        <option value="vip">VIP</option>
+        <option value="normal">Bình thường</option>
+      </select>
+    
+      <select id="sortSelect" class="select-ui">
+        <option value="">Sắp xếp</option>
+        <option value="lastVisit">Lần đến gần nhất</option>
+        <option value="spending">Tổng chi tiêu</option>
+      </select>
+    </div>
+    
+
+    <div class="table-card">
+      <table class="customer-table">
+        <thead>
+            <tr>
+                <th>Khách</th>
+                <th>Số điện thoại</th>
+                <th>Thú cưng</th>
+                <th>Lần đến cuối</th>
+                <th>Tổng chi tiêu</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="customerList">
+            <!-- JS render -->
+        </tbody>
+      </table>
+      <div class="pagination" id="pagination"></div>
+    </div>
+    
+
+    <!-- Popup Add/Edit -->
+    <div class="modal" id="customerModal">
+      <div class="modal-box">
+        <h2 id="modalTitle">🧑‍💼 Thêm khách hàng</h2>
+    
+        <form id="customerForm">
+          <input type="hidden" id="customerId">
+    
+          <div class="form-group">
+            <label>Tên khách</label>
+            <input type="text" id="name" placeholder="Nhập tên khách hàng" required>
+          </div>
+    
+          <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="phone" placeholder="Nhập số điện thoại" required>
+          </div>
+    
+          <div class="form-group">
+            <label>Thú cưng</label>
+            <input type="text" id="pet" placeholder="Ví dụ: Chó Poodle, Mèo Anh">
+          </div>
+    
+          <div class="form-group">
+            <label>Trạng thái</label>
+            <select id="status">
+              <option value="normal">Bình thường</option>
+              <option value="vip">VIP</option>
+            </select>
+          </div>
+    
+          <div class="modal-actions">
+            <button type="button" class="btn cancel" id="btnCancel">Hủy</button>
+            <button type="submit" class="btn save">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+
+</main>
+</div>
+<script src="js/KhachHang.js"></script>
+</body>
+</html>
+

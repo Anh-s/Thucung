@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Lịch Hẹn</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/LichHen.css" />
+</head>
+<body>
+
+<header class="topbar">
+    <img src="img/logo.png" width="300" alt="Pet">
+  <h2>Pet’s Home – Admin</h2>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <ul>
+          <li><a href="TongQuan.html" class="menu-item active">📊 Tổng quan</a></li>
+          <li><a href="LichHen.html" class="menu-item">📅 Lịch hẹn</a></li>
+          <li><a href="ThuCung.html" class="menu-item">🐾  Tin thú cưng</a></li>
+          <li><a href="KhachHang.html" class="menu-item">👤 Khách hàng</a></li>
+          <li><a href="DichVu.html" class="menu-item">🛁 Dịch vụ</a></li>
+          <li><a href="NhanVien.html" class="menu-item">👩‍⚕️ Nhân viên</a></li>
+          <li><a href="DoanhThu.html" class="menu-item">💰 Doanh thu</a></li>
+          <li><a href="SanPham.html" class="menu-item">🛍️ Sản phẩm</a></li>
+          <li><a href="DanhGia.html" class="menu-item">⭐ Đánh giá</a></li>
+          <li><a href="CaiDat.html" class="menu-item">⚙️ Cài đặt</a></li>
+        </ul>
+      </aside>
+      
+
+  <main class="content">
+
+    <div class="header">
+      <h1>Lịch Hẹn</h1>
+  
+      <div class="header-actions">
+        <input type="date" id="dashboardDate">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm thú cưng / khách hàng">
+        <button class="add-btn" id="btnCreate">+ Tạo lịch</button>
+        <button class="delete-btn" id="btnDeleteMode">Xóa</button>
+        <button class="delete-btn" id="btnConfirmDelete" style="display:none;">Xóa đã chọn</button>
+        <button class="gray-btn" id="btnCancelDelete" style="display:none;">Hủy</button>
+      </div>
+    </div>
+  
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" data-range="day">Hôm nay</button>
+      <button class="tab" data-range="week">Tuần này</button>
+      <button class="tab" data-range="month">Tháng này</button>
+    </div>    
+  
+    <!-- FILTER -->
+    <div class="filters">
+      <select>
+        <option>Tất cả dịch vụ</option>
+        <option>Tắm & Grooming</option>
+        <option>Spa thư giãn</option>
+        <option>Trông giữ</option>
+        <option>Vaccine</option>
+      </select>
+  
+      <select>
+        <option>Tất cả trạng thái</option>
+        <option>Chờ xác nhận</option>
+        <option>Đã xác nhận</option>
+        <option>Đang chăm sóc</option>
+        <option>Hủy</option>
+      </select>
+
+      <select>
+        <option>Nhân viên</option>
+        <option>Tuyết Anh</option>
+        <option>Ngọc Ánh</option>
+        <option>Thảo Vi</option>
+      </select>
+    </div>
+  
+    <div class="appointment-list">
+
+      <!-- HEADER -->
+      <div class="appointment-header">
+        <span>#</span>
+        <span>Thú cưng</span>
+        <span>Khách hàng</span>
+        <span>Dịch vụ</span>
+        <span>Trạng thái</span>
+        <span>Chi tiết</span>
+      </div>
+    
+      <!-- ROW 1-->
+        <div class="appointment-card waiting" id="card-1">
+          <div class="index">D1</div>
+          
+          <div class="pet">
+            <img src="img/dog1.jpg">
+            <div>
+              <strong id="card-pet-name">Max</strong>
+              <small>Chó Poodle • 2 tuổi</small>
+            </div>
+          </div>
+          
+          <div class="owner">
+            <strong>Huỳnh Anh</strong>
+            <small>0987 123 456</small>
+          </div>
+          
+          <div class="service grooming" id="card-service">
+            Tắm & Grooming
+            <small id="card-service-info">60 phút • 200.000đ</small>
+          </div>
+          
+          <span class="status" id="card-status">Chờ xác nhận</span>
+          
+          <button class="detail-btn" onclick="openPopup(this)" data-id="card-1">Chi tiết</button>
+          <input type="checkbox" class="delete-check" style="display:none;">
+
+        </div>
+
+      <!-- ROW 2-->
+        <div class="appointment-card waiting" id="card-2">
+          <div class="index">C1</div>
+          
+          <div class="pet">
+            <img src="img/cat1.jpg">
+            <div>
+              <strong id="card-pet-name">Miu Miu</strong>
+              <small>Mèo Anh • 1 tuổi</small>
+            </div>
+          </div>
+          
+          <div class="owner">
+            <strong>Kiều Ngân</strong>
+            <small>0912 333 444</small>
+          </div>
+          
+          <div class="service grooming" id="card-service">
+            Vaccine
+            <small id="card-service-info">30 phút • 150.000đ</small>
+          </div>
+          
+          <span class="status" id="card-status">Đã xác nhận</span>
+          
+          <button class="detail-btn" onclick="openPopup(this)" data-id="card-2">Chi tiết</button>
+          <input type="checkbox" class="delete-check" style="display:none;">
+
+        </div>
+       
+
+  </main>
+</div>
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+
+    <div class="popup-header">
+      <h3>📋 Chi tiết lịch hẹn</h3>
+      <button class="close-x" onclick="closePopup()">✕</button>
+    </div>
+
+    <div class="popup-pet">
+      <img id="popup-pet-img">
+      <div>
+        <strong id="popup-pet-name"></strong>
+        <small id="popup-pet-info"></small>
+      </div>
+    </div>
+
+    <div class="popup-grid">
+
+      <div>
+        <label>Mã số</label>
+        <input type="text" id="popup-code" disabled>
+      </div>
+
+      <div>
+        <label>Thời gian hẹn</label>
+        <input type="datetime-local" id="popup-time">
+      </div>
+
+      <div>
+        <label>Khách hàng</label>
+        <input type="text" id="popup-owner" disabled>
+      </div>
+
+      <div>
+        <label>Số điện thoại</label>
+        <input type="text" id="popup-phone" disabled>
+      </div>
+
+      <div>
+        <label>Dịch vụ</label>
+        <select id="popup-service">
+          <option>Tắm & Grooming</option>
+          <option>Spa thư giãn</option>
+          <option>Trông giữ</option>
+          <option>Vaccine</option>
+        </select>
+      </div>
+
+      <div class="service-extra">
+        <input type="number" id="popup-minute" placeholder="Phút">
+        <input type="number" id="popup-price" placeholder="Giá (đ)">
+      </div>
+
+      <div>
+        <label>Nhân viên</label>
+        <select id="popup-staff">
+          <option>Tuyết Anh</option>
+          <option>Ngọc Ánh</option>
+          <option>Thảo Vi</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Trạng thái</label>
+        <select id="popup-status">
+          <option>Chờ xác nhận</option>
+          <option>Đã xác nhận</option>
+          <option>Đang chăm sóc</option>
+          <option>Hoàn thành</option>
+          <option>Hủy</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="popup-note">
+      <label>Lưu ý</label>
+      <textarea id="popup-note"></textarea>
+    </div>
+
+    <div class="popup-actions">
+      <button class="cancel" onclick="closePopup()">Đóng</button>
+      <button class="save" onclick="savePopup()">Lưu</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- CREATE POPUP -->
+<div class="popup" id="createPopup">
+  <div class="popup-content">
+
+    <div class="popup-header">
+      <h3>➕ Tạo lịch hẹn mới</h3>
+      <button class="close-x" onclick="closeCreatePopup()">✕</button>
+    </div>
+
+    <div class="popup-grid">
+      <div>
+        <label>Ảnh thú cưng</label>
+        <input type="file" id="create-img" accept="image/*" onchange="previewCreateImg(event)">
+        <img id="create-img-preview" style="width:70px;height:70px;border-radius:8px;margin-top:6px;object-fit:cover;display:none;">
+      </div>      
+
+      <div>
+        <label>Mã lịch</label>
+        <input type="text" id="create-code" placeholder="Ví dụ: D2">
+      </div>
+
+      <div>
+        <label>Thời gian hẹn</label>
+        <input type="datetime-local" id="create-time">
+      </div>
+
+      <div>
+        <label>Tên thú cưng</label>
+        <input type="text" id="create-pet-name" placeholder="Ví dụ: Max">
+      </div>
+
+      <div>
+        <label>Loài + Tuổi</label>
+        <input type="text" id="create-pet-info" placeholder="Chó Poodle • 2 tuổi">
+      </div>
+
+      <div>
+        <label>Khách hàng</label>
+        <input type="text" id="create-owner" placeholder="Tên khách">
+      </div>
+
+      <div>
+        <label>Số điện thoại</label>
+        <input type="text" id="create-phone" placeholder="SĐT">
+      </div>
+
+      <div>
+        <label>Dịch vụ</label>
+        <select id="create-service">
+          <option>Tắm & Grooming</option>
+          <option>Spa thư giãn</option>
+          <option>Trông giữ</option>
+          <option>Vaccine</option>
+        </select>
+      </div>
+
+      <div class="service-extra">
+        <input type="number" id="create-minute" placeholder="Phút">
+        <input type="number" id="create-price" placeholder="Giá (đ)">
+      </div>
+
+      <div>
+        <label>Nhân viên</label>
+        <select id="create-staff">
+          <option>Tuyết Anh</option>
+          <option>Ngọc Ánh</option>
+          <option>Thảo Vi</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div>
+      <label>Lưu ý</label>
+      <textarea id="create-note" placeholder="Tình trạng thú cưng"></textarea>
+    </div>
+
+    <div class="popup-actions">
+      <button class="cancel" onclick="closeCreatePopup()">Hủy</button>
+      <button class="save" onclick="saveCreatePopup()">Tạo lịch</button>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="js/LichHen.js"></script>
+
+</body>
+</html>
